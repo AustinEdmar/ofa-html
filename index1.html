@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Technical File</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .modal {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .modal-header {
+      background-color: #ff6b6b;
+      color: white;
+      border-radius: 8px 8px 0 0;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .modal-body {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-right: 2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+
+    .form-label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      padding: 0.5rem;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .form-control:read-only {
+      background-color: #f1f1f1;
+      cursor: not-allowed;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="modal">
+    <div class="modal-header">
+      FICHA TECNICA
+    </div>
+    <div class="modal-body">
+      <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-picture">
+      <form>
+        <div class="form-group">
+          <label for="name" class="form-label">Nome Completo</label>
+          <input type="text" class="form-control" id="name" value="Angelina Joana Massiala Vata" readonly>
+        </div>
+        <div class="form-group">
+          <label for="birthDate" class="form-label">Data de Nascimento</label>
+          <input type="text" class="form-control" id="birthDate" value="06-04-1992" readonly>
+        </div>
+        <div class="form-group">
+          <label for="gender" class="form-label">Gênero</label>
+          <input type="text" class="form-control" id="gender" value="Feminino" readonly>
+        </div>
+        <div class="form-group">
+          <label for="fatherName" class="form-label">Nome do Pai</label>
+          <input type="text" class="form-control" id="fatherName" value="Agostinho Jacinto Massiala" readonly>
+        </div>
+        <div class="form-group">
+          <label for="motherName" class="form-label">Nome da Mãe</label>
+          <input type="text" class="form-control" id="motherName" value="Maria Joana Macevo Cuilo" readonly>
+        </div>
+        <div class="form-group">
+          <label for="civilStatus" class="form-label">Estado Civil</label>
+          <input type="text" class="form-control" id="civilStatus" value="Casado(a)" readonly>
+        </div>
+        <div class="form-group">
+          <label for="nationality" class="form-label">Nacionalidade</label>
+          <input type="text" class="form-control" id="nationality" value="Angola" readonly>
+        </div>
+        <div class="form-group">
+          <label for="documentType" class="form-label">Tipo de Documento</label>
+          <input type="text" class="form-control" id="documentType" value="Bilhete de Identidade" readonly>
+        </div>
+        <div class="form-group">
+          <label for="documentNumber" class="form-label">Número do Documento</label>
+          <input type="text" class="form-control" id="documentNumber" value="00222206CA039" readonly>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Telefone</label>
+          <input type="text" class="form-control" id="phone" value="926644234" readonly>
+        </div>
+        <div class="form-group">
+          <label for="municipality" class="form-label">Município</label>
+          <input type="text" class="form-control" id="municipality" value="Quilamba Quiaxi" readonly>
+        </div>
+        <div class="form-group">
+          <label for="residence" class="form-label">Residência</label>
+          <input type="text" class="form-control" id="residence" value="Golf I" readonly>
+        </div>
+        <div class="form-group">
+          <label for="province" class="form-label">Província</label>
+          <input type="text" class="form-control" id="province" value="Luanda" readonly>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn">Fechar</button>
+    </div>
+  </div>
+</body>
+</html>

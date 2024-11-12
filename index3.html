@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Explorer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --dark-bg: #1a1a1a;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            color: white;
+        }
+
+        .hero-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-item {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 35vh;
+        }
+
+        .carousel-item.active {
+            display: flex;
+            align-items: center;
+        }
+
+        .carousel-indicators {
+            z-index: 3;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            z-index: 3;
+            width: 5%;
+        }
+
+        .destination-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .destination-img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #3d8b40;
+            transform: scale(1.05);
+        }
+
+        .dark-section {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Journey Explorer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#destinations">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero-section">
+        <div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('./img/maca.jpg')">
+                    <div class="carousel-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="row">
+                                <div class="col-lg-6 animate-fade-in-up">
+                                    <h1 class="display-4 fw-bold mb-4">Journey to Paradise Island</h1>
+                                    <p class="lead mb-4">Discover breathtaking landscapes and unforgettable adventures</p>
+                                    <button class="btn btn-custom">Start Your Journey</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('./img/predio.jpg')">
+                    <div class="carousel-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="row">
+                                <div class="col-lg-6 animate-fade-in-up">
+                                    <h1 class="display-4 fw-bold mb-4">Explore Mountain Peaks</h1>
+                                    <p class="lead mb-4">Experience the thrill of mountain adventures</p>
+                                    <button class="btn btn-custom">Discover More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('./img/predio1.jpg')">
+                    <div class="carousel-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="row">
+                                <div class="col-lg-6 animate-fade-in-up">
+                                    <h1 class="display-4 fw-bold mb-4">Hidden Beach Getaways</h1>
+                                    <p class="lead mb-4">Find your perfect slice of paradise</p>
+                                    <button class="btn btn-custom">Plan Your Escape</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Popular Destinations</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="destination-card shadow">
+                        <img src="/api/placeholder/400/300" class="destination-img w-100" alt="Destination 1">
+                        <div class="p-3">
+                            <h5>Crystal Bay</h5>
+                            <p class="text-muted">Experience pristine beaches and crystal-clear waters</p>
+                            <button class="btn btn-custom">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="destination-card shadow">
+                        <img src="/api/placeholder/400/300" class="destination-img w-100" alt="Destination 2">
+                        <div class="p-3">
+                            <h5>Mountain Trek</h5>
+                            <p class="text-muted">Adventure through majestic mountain landscapes</p>
+                            <button class="btn btn-custom">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="destination-card shadow">
+                        <img src="/api/placeholder/400/300" class="destination-img w-100" alt="Destination 3">
+                        <div class="p-3">
+                            <h5>Hidden Lagoon</h5>
+                            <p class="text-muted">Discover secret spots and natural wonders</p>
+                            <button class="btn btn-custom">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dark Section -->
+    <section class="dark-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">What Our Customers Say</h2>
+                    <div class="testimonial-card">
+                        <p>"An incredible experience that exceeded all expectations. The journey was perfectly organized!"</p>
+                        <small>- Sarah M.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Journey Explorer</h5>
+                    <p class="text-muted">Your gateway to extraordinary adventures</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-decoration-none text-muted me-3">Privacy Policy</a>
+                    <a href="#" class="text-decoration-none text-muted">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.destination-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => observer.observe(card));
+
+            // Initialize carousel with options
+            const carousel = new bootstrap.Carousel(document.querySelector('#heroCarousel'), {
+                interval: 5000,
+                ride: true,
+                wrap: true
+            });
+        });
+    </script>
+</body>
+</html>
