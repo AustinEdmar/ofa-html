@@ -55,11 +55,11 @@
     <div class="overlay" id="overlay"></div>
 
       <!-- Sidebar -->
-    <div class="sidebar " id="sidebar">
+      <div class="sidebar " id="sidebar">
         <div class="profile-section">
             <h3 class=" mt-3 text-center text-white  text-white desktop-title">Menu</h3>
-            <a href="../index.html" class="nav-link mobile-logo">
-                <img src="../img/ofa.png" alt="Logo" class="rounded-circle logo mobile-logo">
+            <a href="index.html" class="nav-link mobile-logo">
+                <img src="./img/ofa.png" alt="Logo" class="rounded-circle logo mobile-logo">
             </a>
             <hr>
             
@@ -77,9 +77,9 @@
                     <div class="accordion-body">
                         <ul class="sub-menu">
                             <li><a href="lista-candidatos.html" class="nav-link "><i class="fas fa-list me-2 "></i> Candidatos</a></li>
-                            <li><a href="lista-membros.html" class="nav-link"><i class="fas fa-plus me-2"></i> Membros</a></li>
-                            <li><a href="lista-usuarios.html" class="nav-link"><i class="fas fa-plus me-2"></i> Usuarios</a></li>
-                            <li><a href="#" class="nav-link"><i class="fas fa-plus me-2"></i> Relatorios</a></li>
+                            <li><a href="lista-membros.html" class="nav-link"><i class="fa fa-user-circle me-2"></i> Membros</a></li>
+                            <li><a href="lista-usuarios.html" class="nav-link"><i class="fa fa-user" me-2"></i> Usuarios</a></li>
+                            <!-- <li><a href="#" class="nav-link"><i class="fas fa-print me-2"></i> Relatorios</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                     <div class="accordion-body">
                         <ul class="sub-menu">
                             <li><a href="#" class="nav-link"><i class="fas fa-history me-2"></i> Por Aprovar</a></li>
-                            <li><a href="#" class="nav-link"><i class="fas fa-plus me-2"></i> Aprovadas</a></li>
+                            <li><a href="#" class="nav-link"><i class="fas fa-check-square me-2"></i> Aprovadas</a></li>
                         </ul>
                     </div>
                 </div>
@@ -167,8 +167,8 @@
                 <div id="eventoCollapse" class="accordion-collapse collapse " data-bs-parent="#sidebarAccordion">
                     <div class="accordion-body">
                         <ul class="sub-menu">
-                            <li><a href="lista-membros.html" class="nav-link "><i class="fas fa-list me-2 "></i> Lançamentos</a></li>
-                            <li><a href="lista-membros.html" class="nav-link "><i class="fas fa-list me-2 "></i> Relatorios</a></li>
+                            <li><a href="lista-membros.html" class="nav-link "><i class="fas fa-paper-plane me-2 "></i> Lançamentos</a></li>
+                            <li><a href="lista-membros.html" class="nav-link "><i class="fas fa-print me-2 "></i> Relatorios</a></li>
 
                         </ul>
                     </div>
@@ -197,7 +197,7 @@
              <div class="accordion-item bg-transparent border-0">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#lacamentosCollapse">
-                        <i class="fas fa-money-bill-alt me-2 "></i> Lançamentos
+                        <i class="fas fa-solid fa-envelopes-bulk me-2 "></i> Lançamentos
                     </button>
                 </h2>
                 <div id="lacamentosCollapse" class="accordion-collapse collapse" data-bs-parent="#testeCollapse">
@@ -279,8 +279,8 @@
                                 </button>
 
                                 
-                               <button class="btn btn-success btn-sm action-btn">
-                                    <i class="fas fa-check"></i>
+                               <button class="btn btn-danger btn-sm action-btn">
+                                    <i class="fas fa-trash"></i>
                                 </button>
                                  <!-- 
                                 <button class="btn btn-danger btn-sm action-btn">
@@ -447,6 +447,7 @@
                         <li class="nav-item" role="presentation">
                           <button class="nav-link" id="anexo-contact-tab" data-bs-toggle="pill" data-bs-target="#anexo-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Anexos Documentos</button>
                         </li>
+                        
                       </ul>
                       <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui reprehenderit id nulla veniam 
@@ -479,6 +480,7 @@
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta sint, ad animi rerum maiores illum et consequatur assumenda ratione iusto non incidunt sapiente iure reiciendis doloribus. Illum sequi rem voluptas?</div>
                         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta sint, ad animi rerum maiores illum et consequatur assumenda ratione iusto non incidunt sapiente iure reiciendis doloribus. Illum sequi rem voluptas?</div>
                         <div class="tab-pane fade" id="anexo-contact" role="tabpanel" aria-labelledby="anexo-contact-tab">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta sint, ad animi rerum maiores illum et consequatur assumenda ratione iusto non incidunt sapiente iure reiciendis doloribus. Illum sequi rem voluptas?</div>
+                       
                       </div>
                    </div>
                 </div>
@@ -488,7 +490,7 @@
                         <i class="fas fa-times"></i> Fechar
                       </button>
                       
-                      <button type="button" class="btn btn-outline-success">
+                      <button type="button" class="btn btn-outline btn-color">
                         <i class="bi bi-pencil-square"></i> Editar
                       </button>
                 </div>

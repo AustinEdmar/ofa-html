@@ -213,6 +213,18 @@
        background: white;
        border-radius: 8px;
     }
+    .tabs-content-report{
+       padding: 10px;
+       max-height: 9rem;
+       background: white;
+       border-radius: 8px;
+    }
+    .tabs-content-act-emit{
+       padding: 10px;
+       
+       background: white;
+       border-radius: 8px;
+    }
     
  
         
@@ -283,6 +295,10 @@
   
         }
 
+        .accordion-button:focus,  .btn:focus, select, input, .nav-link, li{
+            outline: none !important;
+            box-shadow: none !important;
+        }
 
         .accordion-button {
             color: white;
@@ -392,6 +408,7 @@
 
     .lista-membro{
    color: gray;
+   
     }
 
 
@@ -584,6 +601,14 @@ padding: 5px;
             canvas {
               height: 250px !important;
             }
+
+            .lista-membro{
+                padding-bottom: 10px;
+            }
+
+            .btn-report{
+                margin: 12px 0px;
+            }
           }
 
           .scroll-container {
@@ -594,5 +619,48 @@ padding: 5px;
             padding-right: 10px; /* Espaço para a barra de rolagem */
             margin-bottom: 60px;
         }
+
+        .btn-color{
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+    
+  
+    /* Personalizando as tabs */
+    .nav-tabs .nav-link {
+      color: #666;
+      border: none;
+      border-bottom: 2px solid transparent;
+    }
+  
+    .nav-tabs .nav-link.active {
+      color: var(--primary-color);
+      border: none;
+      border-bottom: 2px solid var(--primary-color);
+      font-weight: bold;
+      background: transparent;
+    }
+  
+    .nav-tabs .nav-link:hover {
+      border: none;
+      border-bottom: 2px solid var(--secondary-color);
+      color: var(--secondary-color);
+    }
+  
+    /* Personalizando os botões */
+    .btn-warning {
+      background-color: var(--secondary-color) !important;
+      border-color: var(--secondary-color) !important;
+    }
+  
+    .btn-danger {
+      background-color: var(--primary-color) !important;
+      border-color: var(--primary-color) !important;
+    }
+
          
-   
+   .foto-event{
+    width: 100%;
+    height: 20rem;
+   }

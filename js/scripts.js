@@ -299,3 +299,76 @@ document.addEventListener('DOMContentLoaded', function() {
     options: chartConfig
   });
 });
+
+
+/* manipulacoes de btn modals */
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('reportForm');
+  const gerarRelatorioBtn = document.getElementById('gerarRelatorio');
+  const limparCamposBtn = document.getElementById('limparCampos');
+  let activeTab = 'all-provincial'; // Tab inicial ativa
+
+  // Monitorar mudança de tabs
+  document.querySelectorAll('[data-bs-toggle="pill"]').forEach(tab => {
+      tab.addEventListener('shown.bs.tab', function(e) {
+          activeTab = e.target.id.replace('pills-', '').replace('-tab', '');
+      });
+  });
+
+  // Função para gerar relatório
+  gerarRelatorioBtn.addEventListener('click', function() {
+      let url = '';
+      let data = {};
+
+      switch(activeTab) {
+          case 'all-provincial':
+              url = '/api/relatorio/todas-provincias';
+              break;
+
+          case 'provincial':
+              const provincia = document.getElementById('provinciaSelect').value;
+              if (provincia === 'Escolha a Provincia') {
+                  alert('Por favor, selecione uma província');
+                  return;
+              }
+              url = '/api/relatorio/por-provincia';
+              data = { provincia };
+              break;
+
+          case 'direction':
+              const data_relatorio = document.getElementById('dataRelatorio').value;
+              if (!data_relatorio) {
+                  alert('Por favor, selecione uma data');
+                  return;
+              }
+              url = '/api/relatorio/por-data';
+              data = { data_relatorio };
+              break;
+      }
+
+      // Exemplo de chamada à API
+      fetch(url, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Sucesso:', data);
+          // Aqui você pode adicionar lógica para download do relatório
+          alert('Relatório gerado com sucesso!');
+      })
+      .catch((error) => {
+          console.error('Erro:', error);
+          alert('Erro ao gerar relatório');
+      });
+  });
+
+  // Limpar campos
+  limparCamposBtn.addEventListener('click', function() {
+      document.getElementById('provinciaSelect').value = 'Escolha a Provincia';
+      document.getElementById('dataRelatorio').value = '';
+  });
+});

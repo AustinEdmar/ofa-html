@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem dos Farmacêuticos de Angola</title>
+    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Adicione este link no seu <head> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body class="body">
+    <!-- Header Principal -->
+    <header class="main-header ">
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="logo-section ms-3">
+                <button class="hamburger" id="toggleSidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        
+            <div class="logo-img position-absolute start-50 translate-middle-x">
+                <a href="../index.html" class="nav-link">
+                    <img src="../img/ofa.png" alt="Logo" class="rounded-circle logo">
+                </a>
+                
+            </div>
+        
+            <div class="profile-section me-3 d-flex align-items-center">
+                <div class="notification-badge me-5">
+                    <i class="fas fa-bell fs-5"></i>
+                    <span class="badge bg-danger">3</span>
+                </div>
+                <img src="../img/profile.jpg" alt="Profile" class="rounded-circle " style="width: 50px; height: 50px;" data-bs-toggle="dropdown" >
+                
+                <div class="dropdown-menu dropdown-menu-end user-dropdown">
+                    <div class="user-dropdown-header">
+                        <h6 class="mb-0">Dr. Matias Domingos</h6>
+                        <small>Administrador</small>
+                    </div>
+                    <a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Perfil</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Configurações</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Sair</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overlay para fechar o menu -->
+    <div class="overlay" id="overlay"></div>
+
+      <!-- Sidebar -->
+      <div class="sidebar " id="sidebar">
+        <div class="profile-section">
+            <h3 class=" mt-3 text-center text-white  text-white desktop-title">Menu</h3>
+            <a href="index.html" class="nav-link mobile-logo">
+                <img src="./img/ofa.png" alt="Logo" class="rounded-circle logo mobile-logo">
+            </a>
+            <hr>
+            
+            
+        </div>
+        <div class="accordion" id="sidebarAccordion">
+            <!-- Membros Menu -->
+            <div class="accordion-item bg-transparent border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#membroCollapse">
+                        <i class="fas fa-users me-2 "></i> Aprovação
+                    </button>
+                </h2>
+                <div id="membroCollapse" class="accordion-collapse collapse " data-bs-parent="#sidebarAccordion">
+                    <div class="accordion-body">
+                        <ul class="sub-menu">
+                            <li><a href="lista-candidatos.html" class="nav-link "><i class="fas fa-list me-2 "></i> Candidatos</a></li>
+                            <li><a href="lista-membros.html" class="nav-link"><i class="fa fa-user-circle me-2"></i> Membros</a></li>
+                            <li><a href="lista-usuarios.html" class="nav-link"><i class="fa fa-user" me-2"></i> Usuarios</a></li>
+                            <!-- <li><a href="#" class="nav-link"><i class="fas fa-print me-2"></i> Relatorios</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagamentos Menu -->
+            <div class="accordion-item bg-transparent border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pagamentoCollapse">
+                        <i class="fas fa-money-bill me-2"></i> Direcções Técnicas
+                    </button>
+                </h2>
+                <div id="pagamentoCollapse" class="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+                    <div class="accordion-body">
+                        <ul class="sub-menu">
+                            <li><a href="por-aprovar.html" class="nav-link"><i class="fas fa-history me-2"></i> Por Aprovar</a></li>
+                            <li><a href="aprovadas.html" class="nav-link"><i class="fas fa-check-square me-2"></i> Aprovadas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Teste Info Menu -->
+            
+
+            <div class="accordion-item bg-transparent border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testeCollapse">
+                        <i class="fas fa-info-circle me-2"></i> Actos
+                    </button>
+                </h2>
+                <div id="testeCollapse" class="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+                    <div class="accordion-body">
+                        <ul class="sub-menu">
+                            <li>
+                                <!-- Accordion aninhado para "Carteiras Profissionais" -->
+                                <div class="accordion-item bg-transparent border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#carteirasCollapse">
+                                            <i class="fas fa-clipboard me-2"></i> Carteiras Profissionais
+                                        </button>
+                                    </h2>
+                                    <div id="carteirasCollapse" class="accordion-collapse collapse" data-bs-parent="#testeCollapse">
+                                        <div class="accordion-body">
+                                            <ul class="sub-menu">
+                                                <li><a href="#" class="nav-link">Por Aprovar</a></li>
+                                                <li><a href="#" class="nav-link">Emitidos</a></li>
+                                                <li><a href="#" class="nav-link">Relatórios</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- Accordion aninhado para "Carteiras Diárias" -->
+                                <div class="accordion-item bg-transparent border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#carteirasdiariasCollapse">
+                                            <i class="fas fa-clipboard-list me-2"></i> Declarações
+                                        </button>
+                                    </h2>
+                                    <div id="carteirasdiariasCollapse" class="accordion-collapse collapse" data-bs-parent="#testeCollapse">
+                                        <div class="accordion-body">
+                                            <ul class="sub-menu">
+                                                <li><a href="#" class="nav-link">Por Aprovar</a></li>
+                                                <li><a href="#" class="nav-link">Emitidos</a></li>
+                                                <li><a href="#" class="nav-link">Relatórios</a></li>
+                                                <li><a href="#" class="nav-link">Quota</a></li>
+                                                <li><a href="#" class="nav-link">Evento</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item bg-transparent border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#eventoCollapse">
+                        <i class="fas fa-users me-2 "></i> Eventos
+                    </button>
+                </h2>
+                <div id="eventoCollapse" class="accordion-collapse collapse " data-bs-parent="#sidebarAccordion">
+                    <div class="accordion-body">
+                        <ul class="sub-menu">
+                            <li><a href="lista-membros.html" class="nav-link "><i class="fas fa-paper-plane me-2 "></i> Lançamentos</a></li>
+                            <li><a href="lista-membros.html" class="nav-link "><i class="fas fa-print me-2 "></i> Relatorios</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Novo accordion aninhado para "Pagamentos" -->
+             <div class="accordion-item bg-transparent border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#pagamentosCollapse">
+                        <i class="fas fa-money-bill-alt me-2 "></i> Pagamentos
+                    </button>
+                </h2>
+                <div id="pagamentosCollapse" class="accordion-collapse collapse" data-bs-parent="#testeCollapse">
+                    <div class="accordion-body">
+                        <ul class="sub-menu">
+                            <li><a href="#" class="nav-link"><i class="fas fa-credit-card me-2"></i> Joia</a></li>
+                            <li><a href="#" class="nav-link"><i class="fas fa-money-check-alt me-2"></i> Carteira Profissional</a></li>
+                            <li><a href="#" class="nav-link"><i class="fas fa-money-check-alt me-2"></i> Declaração</a></li>
+                            <li><a href="#" class="nav-link"><i class="fas fa-money-check-alt me-2"></i> Quota</a></li>
+                            <li><a href="#" class="nav-link"><i class="fas fa-money-check-alt me-2"></i> Evento</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+             <div class="accordion-item bg-transparent border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#lacamentosCollapse">
+                        <i class="fas fa-solid fa-envelopes-bulk me-2 "></i> Lançamentos
+                    </button>
+                </h2>
+                <div id="lacamentosCollapse" class="accordion-collapse collapse" data-bs-parent="#testeCollapse">
+                    <div class="accordion-body">
+                        <ul class="sub-menu">
+                            <li><a href="#" class="nav-link"><i class="fas fa-credit-card me-2"></i> Despesas</a></li>
+                            <li><a href="#" class="nav-link"><i class="fas fa-money-check-alt me-2"></i> Quotas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item bg-transparent border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#reportCollapse">
+                        <i class="fas fa-money-bill-alt me-2"></i> Relatorios
+                    </button>
+                </h2>
+                <div id="reportCollapse" class="accordion-collapse collapse" data-bs-parent="#testeCollapse">
+                    <div class="accordion-body scroll-container">
+                        <ul class="sub-menu">
+                            <li><a href="#" class="nav-link"><i class="fas fa-credit-card me-2"></i> Joia</a></li>
+                            <li><a href="#" class="nav-link"><i class="fas fa-money-check-alt me-2"></i> Carteira Profissional</a></li>
+                            <li><a href="#" class="nav-link"><i class="fas fa-money-check-alt me-2"></i> Declaração</a></li>
+                            <li><a href="#" class="nav-link"><i class="fas fa-money-check-alt me-2"></i> Quota</a></li>
+                            <li><a href="#" class="nav-link"><i class="fas fa-money-check-alt me-2"></i> Evento</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        
+
+        <div class="container-fluid">
+            <div class="row mb-4 d-flex justify-content-between">
+                <div class="col-sm-4">
+                    <h5 class="mb-0 lista-membro">Por Aprovar Actos de Carteiras Profissionais: 29 total</h5>
+                </div>
+                <div class="col-sm-4  ">
+                    <div class="search-container position-relative">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" class="form-control search-box ps-4" placeholder="Pesquise">
+</div>
+                </div>
+            </div>
+
+            
+            <div class="table-responsive" >
+                <table class="table table-hover table-striped table-bordered aption-top">
+                    
+                    <thead class="">
+                        <tr class="">
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Membro</th>
+                            <th>Nascimento</th>
+                            <th>Empresa</th>
+                            <th>Direcção Técnica</th>
+                            <th>Provincia</th>
+                            <th>Contacto</th>
+                            <th>Acções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Justen</td>
+                            <td>Felgueiras</td>
+                            <td>17/08/1989</td>
+                            <td>Sonangol</td>
+                            <td>Deposito</td>
+                            <td>Luanda</td>
+                            <td>+24492385129</td>
+                            <td>
+                                <button class="btn btn-warning text-white action-btn" data-bs-toggle="modal" data-bs-target="#detailsModal" >
+                                    <i class="fas fa-eye"></i>
+                                </button>
+
+                                
+                               <button class="btn btn-danger btn-sm action-btn">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                 <!-- 
+                                <button class="btn btn-danger btn-sm action-btn">
+                                    <i class="fas fa-trash"></i>
+                                </button> -->
+                            </td>
+                        </tr>
+                       
+                      
+                        
+                       
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <nav aria-label="Page navigation ">
+                <ul class="pagination justify-content-center mt-4 ">
+                    <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Proximo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+     <!-- Details Modal -->
+     <div class="modal fade" id="detailsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white">Deseja aprovar este Acto de Carteira</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <form>  
+                   <div class="row">
+
+                    
+
+                    <div class="col-md-12">
+
+                        <div class="row">
+                      
+                       <div class="col-md-4 mt-2">
+                        <div class="form-group">
+                            <label for="residence" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="residence" value="Bernardo Lussati Vicolo" readonly>
+                          </div>
+                       </div>
+                    
+                     
+                       
+                        </div>
+                    </div>
+  
+                        
+                        
+                        
+                       
+                       
+
+                        
+                       
+
+                        
+                        
+                      </form>
+                   </div>
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline btn-color" data-bs-dismiss="modal">
+                        <i class="fas fa-check"></i> Aprovar
+                      </button>
+                      
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+   <script src="../js/scripts.js"></script>
+</body>
+</html>
